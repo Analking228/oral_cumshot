@@ -1,0 +1,9 @@
+version: '3'
+services:
+  static_server:
+    build: .
+    ports:
+      - "2222:22"
+      - "8080:80"
+    volumes:
+      - ./ansible:/ansible
