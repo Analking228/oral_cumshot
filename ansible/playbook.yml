@@ -1,9 +1,4 @@
 - hosts: all
   become: yes
   roles:
-    - role: users
-    - role: zsh
-    - role: ssh
-    - role: packages
     - role: nginx
-    - role: static
