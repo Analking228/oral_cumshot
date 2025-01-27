@@ -1,0 +1,14 @@
+# roles/static/tasks/main.yml
+- name: Create directory for static files
+  file:
+    path: /var/www/images
+    state: directory
+    owner: www-data
+    group: www-data
+    mode: '0755'
+
+- name: Download static files
+  get_url:
+    url: "{{ item }}"
+    dest: /var/www/images/
+  loop: "{{ static_files }}"

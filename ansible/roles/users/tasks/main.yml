@@ -1,0 +1,19 @@
+- name: Ensure groups are present
+  group:
+    name: "{{ item.name }}"
+    state: present
+  loop: "{{ groups }}"
+
+- name: Ensure users are present
+  user:
+    name: "{{ item.name }}"
+    shell: "{{ item.shell | default('/bin/bash') }}"
+    password: "{{ item.password | default(omit) }}"
+    groups: "{{ item.groups | default([]) }}"
+    append: yes
+    state: "{{ item.state | default('present') }}"
+    generate_ssh_key: "{{ item.generate_ssh_key | default(no) }}"
+    ssh_key_type: "{{ item.ssh_key_type | default('rsa') }}"
+    ssh_key_file: "{{ item.ssh_key_file | default('.ssh/id_rsa') }}"
+    ssh_key_comment: "{{ item.ssh_key_comment | default('ansible-generated key') }}"
+  loop: "{{ users }}"
