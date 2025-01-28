@@ -3,10 +3,10 @@ events {
 }
 
 http {
-    include /etc/nginx/conf.d/*.conf;
 
     server {
-        listen 80;
+        listen 80 _;
+        listen [::]:80 _;
         location / {
             root /data/www;
         }
