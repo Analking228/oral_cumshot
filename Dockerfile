@@ -3,6 +3,7 @@ FROM ubuntu:24.04
 # Обновляем пакеты и устанавливаем Nginx
 RUN apt-get update && \
     apt-get install -y net-tools vim openssh-server && \
+    mkdir /run/sshd \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
