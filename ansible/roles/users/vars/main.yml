@@ -1,0 +1,24 @@
+user_groups:
+  - name: developers
+    state: present
+  - name: admins
+    state: present
+  - name: testers
+    state: absent
+
+# users:
+#   - name: alice
+#     shell: /bin/bash
+#     state: present
+#     ssh_key: "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAr..."
+#     password: "$6$rounds=656000$YOURSALTHERE$YOURPASSWORDHASH"
+#     groups:
+#       - sudo
+#       - developers
+
+#   - name: bob
+#     shell: /bin/zsh
+#     state: absent
+#     ssh_key: ""
+#     password: ""
+#     groups: []
