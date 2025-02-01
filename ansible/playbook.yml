@@ -1,4 +1,4 @@
-- hosts: all
+- hosts: {{ exec_server | default('static') }}
   become: yes
   roles:
-    - role: nginx
+    - role: users

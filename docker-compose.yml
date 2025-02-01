@@ -1,9 +1,9 @@
-version: '3'
 services:
   static_server:
     build: .
+    image: chpok:v1
     ports:
-      - "2222:22"
-      - "8080:80"
+      - "22:22"
+      - "80:80"
     volumes:
       - ./ansible:/ansible
