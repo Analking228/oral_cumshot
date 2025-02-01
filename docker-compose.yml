@@ -3,7 +3,7 @@ services:
     build: .
     image: chpok:v1
     ports:
-      - "22:22"
-      - "80:80"
+      - "2222:22"
+      - "8080:80"
     volumes:
       - ./ansible:/ansible
