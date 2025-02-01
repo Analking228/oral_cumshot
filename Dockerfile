@@ -8,6 +8,7 @@ RUN apt-get update && \
     mkdir -p /root/.ssh && \
     chmod 0700 /root/.ssh && \
     echo "PermitRootLogin yes" > /etc/ssh/sshd_config && \
+    echo "PubkeyAuthentication yes" > /etc/ssh/sshd_config && \
     # sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
     rm -rf /var/lib/apt/lists/*
 

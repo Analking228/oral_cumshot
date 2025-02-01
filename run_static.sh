@@ -1,4 +1,4 @@
 #!/bin/bash
-ssh-keygen -f id_container -t ed25519 -N ""
+#ssh-keygen -f id_container -t ed25519 -N ""
 docker compose up
-ansible-playbook -i ./inventory/test/hosts.ini ./playbook/os.yaml
+ansible-playbook -i ./ansible/inventory.ini ./ansible/playbook.yml
